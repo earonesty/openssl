@@ -597,6 +597,7 @@ install_runtime_libs: build_libs
 
 install_programs: install_runtime_libs build_programs
 	@if "$(INSTALLTOP)"=="" ( $(ECHO) "INSTALLTOP should not be empty" & exit 1 )
+	@if "$(INSTALL_PROGRAMS)"=="" ( $(ECHO) "INSTALL_PROGRAMS is empty" & exit 0 )
 	@$(ECHO) "*** Installing runtime programs"
 	@if not "$(INSTALL_PROGRAMS)"=="" \
 	 "$(PERL)" "$(SRCDIR)\util\mkdir-p.pl" "$(INSTALLTOP)\bin"
